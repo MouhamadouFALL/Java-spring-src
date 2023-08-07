@@ -1,10 +1,8 @@
 package com.siggidieuf.facture;
 
+import com.siggidieuf.facture.controller.IinvoiceController;
 import com.siggidieuf.facture.controller.InvoiceController;
 import com.siggidieuf.facture.controller.InvoiceControllerG;
-import com.siggidieuf.facture.entity.Invoice;
-import com.siggidieuf.facture.service.InvoiceService;
-import com.siggidieuf.facture.service.InvoiceServiceG;
 
 import java.util.Scanner;
 
@@ -22,11 +20,11 @@ public class App
         Scanner scan = new Scanner(System.in);
         int config = scan.nextInt();
         if (config == 1) {
-            InvoiceController invoiceController = new InvoiceController();
-            invoiceController.createInvoiceBasic();
+            IinvoiceController invoiceController = new InvoiceController();
+            invoiceController.createInvoice();
         } else if (config == 2) {
-            InvoiceControllerG invoiceControllerG = new InvoiceControllerG();
-            invoiceControllerG.createInvoiceG();
+            IinvoiceController invoiceControllerG = new InvoiceControllerG();
+            invoiceControllerG.createInvoice();
         }
 
         if (scan != null) scan.close();

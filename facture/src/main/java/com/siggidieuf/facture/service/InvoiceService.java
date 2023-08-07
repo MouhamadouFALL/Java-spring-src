@@ -1,12 +1,12 @@
 package com.siggidieuf.facture.service;
 
 import com.siggidieuf.facture.entity.Invoice;
-import com.siggidieuf.facture.repository.InvoiceRepository;
+import com.siggidieuf.facture.repository.IinvoiceRepository;
 
-public class InvoiceService {
+public class InvoiceService implements IinvoiceService {
 
     private static Long lastNumber=0L;
-    private static InvoiceRepository invoiceRepository = new InvoiceRepository();
+    private IinvoiceRepository invoiceRepository ;
     public void createInvoice(Invoice invoice){
         invoice.setNumber(String.valueOf(++lastNumber));
         invoiceRepository.create(invoice);
