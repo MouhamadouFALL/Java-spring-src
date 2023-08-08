@@ -7,6 +7,15 @@ import java.util.Scanner;
 public class InvoiceController implements IinvoiceController{
 
     private IinvoiceService invoiceService;
+
+    public IinvoiceService getInvoiceService() {
+        return invoiceService;
+    }
+
+    public void setInvoiceService(IinvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
+
     public void createInvoice(){
 
         // recupérer le nom du client

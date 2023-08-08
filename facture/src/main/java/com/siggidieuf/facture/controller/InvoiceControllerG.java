@@ -6,6 +6,15 @@ import com.siggidieuf.facture.service.IinvoiceService;
 public class InvoiceControllerG implements IinvoiceController {
 
     private IinvoiceService invoiceService;
+
+    public IinvoiceService getInvoiceService() {
+        return invoiceService;
+    }
+
+    public void setInvoiceService(IinvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
+
     public void createInvoice(){
 
         String name = "Leukk";
