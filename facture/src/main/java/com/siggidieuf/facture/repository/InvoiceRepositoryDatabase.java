@@ -5,7 +5,7 @@ import com.siggidieuf.facture.entity.Invoice;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvoiceRepositoryG implements IinvoiceRepository{
+public class InvoiceRepositoryDatabase implements IinvoiceRepository{
 
     private List<Invoice> invoices = new ArrayList<Invoice>();
 

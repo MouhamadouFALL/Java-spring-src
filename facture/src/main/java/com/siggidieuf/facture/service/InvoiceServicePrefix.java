@@ -3,9 +3,9 @@ package com.siggidieuf.facture.service;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.repository.IinvoiceRepository;
 
-public class InvoiceService implements IinvoiceService {
+public class InvoiceServicePrefix implements IinvoiceService{
 
-    private static Long lastNumber=0L;
+    private static Long lastNumber=120L;
     private IinvoiceRepository invoiceRepository;
 
     public IinvoiceRepository getInvoiceRepository() {
@@ -17,7 +17,7 @@ public class InvoiceService implements IinvoiceService {
     }
 
     public void createInvoice(Invoice invoice){
-        invoice.setNumber(String.valueOf(++lastNumber));
+        invoice.setNumber("INV_"+(++lastNumber));
         invoiceRepository.create(invoice);
         System.out.println("| Client: "+invoice.getClient()+" || Fact: "+invoice.getNumber()+" |");
     }

@@ -3,7 +3,7 @@ package com.siggidieuf.facture.controller;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.service.IinvoiceService;
 
-public class InvoiceControllerG implements IinvoiceController {
+public class InvoiceControllerWeb implements IinvoiceController {
 
     private IinvoiceService invoiceService;
 
