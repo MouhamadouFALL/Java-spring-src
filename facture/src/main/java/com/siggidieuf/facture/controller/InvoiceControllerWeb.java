@@ -2,9 +2,11 @@ package com.siggidieuf.facture.controller;
 
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.service.IinvoiceService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class InvoiceControllerWeb implements IinvoiceController {
 
+    @Autowired
     private IinvoiceService invoiceService;
 
     public IinvoiceService getInvoiceService() {

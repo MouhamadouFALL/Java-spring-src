@@ -2,6 +2,7 @@ package com.siggidieuf.facture.service;
 
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.repository.IinvoiceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class InvoiceServicePrefix implements IinvoiceService{
 
@@ -12,6 +13,7 @@ public class InvoiceServicePrefix implements IinvoiceService{
         this.prfix = prfix;
     }
 
+    @Autowired
     private IinvoiceRepository invoiceRepository;
 
     public IinvoiceRepository getInvoiceRepository() {
