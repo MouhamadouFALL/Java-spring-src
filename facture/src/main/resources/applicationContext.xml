@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="invoiceRepositoryDatabase" class="com.siggidieuf.facture.repository.InvoiceRepositoryDatabase"/>
+    <bean id="invoiceServicePrefix" class="com.siggidieuf.facture.service.InvoiceServicePrefix">
+        <property name="invoiceRepository" ref="invoiceRepositoryDatabase"/>
+    </bean>
+    <bean class="com.siggidieuf.facture.controller.InvoiceControllerWeb">
+        <property name="invoiceService" ref="invoiceServicePrefix"/>
+    </bean>
+    
+
+</beans>
