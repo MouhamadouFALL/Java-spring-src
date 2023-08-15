@@ -5,7 +5,13 @@ import com.siggidieuf.facture.repository.IinvoiceRepository;
 
 public class InvoiceServicePrefix implements IinvoiceService{
 
-    private static Long lastNumber=120L;
+    private Long lastNumber;
+    private String prfix;
+
+    public void setPrfix(String prfix) {
+        this.prfix = prfix;
+    }
+
     private IinvoiceRepository invoiceRepository;
 
     public IinvoiceRepository getInvoiceRepository() {
@@ -20,5 +26,17 @@ public class InvoiceServicePrefix implements IinvoiceService{
         invoice.setNumber("INV_"+(++lastNumber));
         invoiceRepository.create(invoice);
         System.out.println("| Client: "+invoice.getClient()+" || Fact: "+invoice.getNumber()+" |");
+    }
+
+    public Long getLastNumber() {
+        return lastNumber;
+    }
+
+    public void setLastNumber(Long lastNumber) {
+        this.lastNumber = lastNumber;
+    }
+
+    public String getPrfix() {
+        return prfix;
     }
 }
