@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class InvoiceServicePrefix implements IinvoiceService{
 
-    @Value("224")
+    @Value("${invoice.lastNumber}")
     private Long lastNumber;
-    @Value("INV_OUT_")
+    @Value("${invoice.prefix}")
     private String prfix;
 
     public void setPrfix(String prfix) {
