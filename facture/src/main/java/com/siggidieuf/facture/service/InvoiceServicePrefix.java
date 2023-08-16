@@ -3,10 +3,13 @@ package com.siggidieuf.facture.service;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.repository.IinvoiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 
 public class InvoiceServicePrefix implements IinvoiceService{
 
+    @Value("224")
     private Long lastNumber;
+    @Value("INV_OUT_")
     private String prfix;
 
     public void setPrfix(String prfix) {
@@ -25,7 +28,7 @@ public class InvoiceServicePrefix implements IinvoiceService{
     }
 
     public void createInvoice(Invoice invoice){
-        invoice.setNumber("INV_"+(++lastNumber));
+        invoice.setNumber(prfix+(++lastNumber));
         invoiceRepository.create(invoice);
         System.out.println("| Client: "+invoice.getClient()+" || Fact: "+invoice.getNumber()+" |");
     }

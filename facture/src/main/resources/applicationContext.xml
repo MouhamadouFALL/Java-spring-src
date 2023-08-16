@@ -13,8 +13,7 @@
     <bean class="com.siggidieuf.facture.repository.InvoiceRepositoryDatabase"/>
 
     <bean class="com.siggidieuf.facture.service.InvoiceServicePrefix">
-        <property name="lastNumber" value="220"/>
-        <property name="prfix" value="INV_"/>
+
     </bean>
 
     <bean class="com.siggidieuf.facture.controller.InvoiceControllerWeb"/>
