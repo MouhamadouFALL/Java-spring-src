@@ -3,7 +3,9 @@ package com.siggidieuf.facture.controller;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.service.IinvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class InvoiceControllerWeb implements IinvoiceController {
 
     @Autowired

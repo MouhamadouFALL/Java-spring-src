@@ -10,13 +10,14 @@
 
     <context:annotation-config/>
     <context:property-placeholder location="classpath:application.properties"/>
+    <context:component-scan base-package="com.siggidieuf.facture"/>
 
-    <bean class="com.siggidieuf.facture.repository.InvoiceRepositoryDatabase"/>
+<!--    <bean class="com.siggidieuf.facture.repository.InvoiceRepositoryDatabase"/>-->
 
-    <bean class="com.siggidieuf.facture.service.InvoiceServicePrefix">
+    <!--<bean class="com.siggidieuf.facture.service.InvoiceServicePrefix">
 
-    </bean>
+    </bean>-->
 
-    <bean class="com.siggidieuf.facture.controller.InvoiceControllerWeb"/>
+<!--    <bean class="com.siggidieuf.facture.controller.InvoiceControllerWeb"/>-->
 
 </beans>
