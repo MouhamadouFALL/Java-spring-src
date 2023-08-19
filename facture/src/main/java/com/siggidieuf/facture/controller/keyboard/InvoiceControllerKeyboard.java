@@ -1,11 +1,14 @@
-package com.siggidieuf.facture.controller;
+package com.siggidieuf.facture.controller.keyboard;
 
+import com.siggidieuf.facture.controller.IinvoiceController;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.service.IinvoiceService;
+import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
-public class InvoiceControllerDouchet implements IinvoiceController{
+@Controller
+public class InvoiceControllerKeyboard implements IinvoiceController {
 
     private IinvoiceService invoiceService;
 
@@ -19,10 +22,16 @@ public class InvoiceControllerDouchet implements IinvoiceController{
 
     public void createInvoice(){
 
-        String name = "Douchet";
+        // recupérer le nom du client
+        System.out.println( "Enter Name Client : " );
+        Scanner scan = new Scanner(System.in);
+        String name = scan.nextLine();
         Invoice invoice = new Invoice();
         invoice.setClient(name);
+
+        //InvoiceService invoiceService = new InvoiceService();
         invoiceService.createInvoice(invoice);
 
+        if (scan != null) scan.close();
     }
 }

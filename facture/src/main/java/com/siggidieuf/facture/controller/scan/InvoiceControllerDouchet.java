@@ -1,14 +1,15 @@
-package com.siggidieuf.facture.controller;
+package com.siggidieuf.facture.controller.scan;
 
+import com.siggidieuf.facture.controller.IinvoiceController;
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.service.IinvoiceService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-@Controller
-public class InvoiceControllerWeb implements IinvoiceController {
+import java.util.Scanner;
 
-    @Autowired
+@Controller
+public class InvoiceControllerDouchet implements IinvoiceController {
+
     private IinvoiceService invoiceService;
 
     public IinvoiceService getInvoiceService() {
@@ -21,11 +22,9 @@ public class InvoiceControllerWeb implements IinvoiceController {
 
     public void createInvoice(){
 
-        String name = "Leukk";
+        String name = "Douchet";
         Invoice invoice = new Invoice();
         invoice.setClient(name);
-
-        //InvoiceServiceG invoiceServiceG = new InvoiceServiceG();
         invoiceService.createInvoice(invoice);
 
     }

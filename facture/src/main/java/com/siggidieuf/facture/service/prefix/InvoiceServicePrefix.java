@@ -1,13 +1,14 @@
-package com.siggidieuf.facture.service;
+package com.siggidieuf.facture.service.prefix;
 
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.repository.IinvoiceRepository;
+import com.siggidieuf.facture.service.IinvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InvoiceServicePrefix implements IinvoiceService{
+public class InvoiceServicePrefix implements IinvoiceService {
 
     @Value("${invoice.lastNumber}")
     private Long lastNumber;

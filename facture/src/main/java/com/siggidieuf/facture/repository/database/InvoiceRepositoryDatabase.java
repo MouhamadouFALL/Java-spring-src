@@ -1,13 +1,14 @@
-package com.siggidieuf.facture.repository;
+package com.siggidieuf.facture.repository.database;
 
 import com.siggidieuf.facture.entity.Invoice;
+import com.siggidieuf.facture.repository.IinvoiceRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class InvoiceRepositoryDatabase implements IinvoiceRepository{
+public class InvoiceRepositoryDatabase implements IinvoiceRepository {
 
     private List<Invoice> invoices = new ArrayList<Invoice>();
 

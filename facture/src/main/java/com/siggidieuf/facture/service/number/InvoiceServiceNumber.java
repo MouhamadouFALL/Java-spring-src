@@ -1,8 +1,11 @@
-package com.siggidieuf.facture.service;
+package com.siggidieuf.facture.service.number;
 
 import com.siggidieuf.facture.entity.Invoice;
 import com.siggidieuf.facture.repository.IinvoiceRepository;
+import com.siggidieuf.facture.service.IinvoiceService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class InvoiceServiceNumber implements IinvoiceService {
 
     private static Long lastNumber=0L;
